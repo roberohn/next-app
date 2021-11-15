@@ -6,7 +6,7 @@ const headers = {
   "Cache-Control": "no-cache",
 };
 
-const StaticSide = () => {
+const StaticSide = (props) => {
   console.log(props);
   return props.pokemon.map((poke) => {
     return (
@@ -34,6 +34,7 @@ export const getStaticProps = async () => {
       imgUrl: r.data.sprites.front_default,
     };
   });
+
   return {
     props: {
       pokemon: pokeData,
